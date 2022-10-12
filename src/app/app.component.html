@@ -1,484 +1,377 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<header>
+  <a href="">monobank <span> Universal bank </span></a>
+  <ul>
+    <li><a href="">дашбоард</a></li>
+    <li><a href="">API</a></li>
+    <li><a href="">Контакти</a></li>
+    <li><select name="" id="">
+      <option value=""> Укр</option>
+      <option value=""> Eng</option>
+    </select></li>
+  </ul>
 
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  <div>
+    <a><img /></a>
+    <ul>
+      <li><a href="">Картки</a></li>
+      <li><a href="">ФОП</a></li>
+      <li><a href="">Депозити</a></li>
+      <li><a href="">облігації</a></li>
+      <li><a href=""> Покупка частинами</a></li>
+      <li><a href=""> Міжнародні перекази</a></li>
+    </ul>
+  </div>
+</header>
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
+<article>
+  <div>
+    <h1>Ми знову прибрали все зайве, щоб ви отримали кращий досвід.</h1>
+    <p>
+      Залиште номер телефону, і ми надішлемо посилання на додаток, де можна
+      відкрити рахунок ФОП
+    </p>
+    <form>
+      <input type="tel" placeholder="+380(XX) XXX-XX-XX" name="" id="" />
+      <button type="submit">Хочу рахунок ФОП</button>
+    </form>
+  </div>
+  <div><img src="" alt="" /></div>
+</article>
 
-  p {
-    margin: 0;
-  }
+<article>
+  <div><img src="" alt="" /></div>
+  <div>
+    <h2>Бухгалтерський кабінет</h2>
+    <p>Окремий бухгалтерський кабінет для керування рахунком ФОП.</p>
+    <p>
+      Можна додати до двох додаткових номерiв телефону для роботи у
+      веб-кабінеті.
+    </p>
+    <button>Увійти в кабінет</button>
+  </div>
+</article>
 
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-right: 8px;
-  }
-
-  .card svg.material-icons path {
-    fill: #888;
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    all: unset;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .terminal {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
-  }
-
-  .terminal::before {
-    content: "\2022 \2022 \2022";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
-  }
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
-</style>
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span>Welcome</span>
-    <div class="spacer"></div>
-    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
-      <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-        <rect width="400" height="400" fill="none"/>
-        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
+<article>
+  <h2>Ви так довго цього чекали</h2>
+  <ul>
+    <li>
+      <svg>
+        <path
+          d="M2 14.0007L17 2.33398L32 14.0007V32.334C32 33.218 31.6488 34.0659 31.0237 34.691C30.3986 35.3161 29.5507 35.6673 28.6667 35.6673H5.33333C4.44928 35.6673 3.60143 35.3161 2.97631 34.691C2.35119 34.0659 2 33.218 2 32.334V14.0007Z"
+          stroke="#FA43A6"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M12 35.6676V19.001H22V35.6676"
+          stroke="#FA43A6"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
       </svg>
-    </a>
-    <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://youtube.com/angular" title="YouTube">
-      <svg id="youtube-logo" height="24" width="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
-        <path d="M0 0h24v24H0V0z" fill="none"/>
-        <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
+      <p>
+        Повністю дистанційне обслуговування: не потрібно відвідувати точку
+        видачі або звертатися до відділення
+      </p>
+    </li>
+    <li>
+      <svg>
+        <rect
+          x="8"
+          y="3.35547"
+          width="24"
+          height="34"
+          rx="4"
+          stroke="#FFBD39"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></rect>
+        <path
+          d="M20 32.3555C21.1046 32.3555 22 31.46 22 30.3555C22 29.2509 21.1046 28.3555 20 28.3555C18.8954 28.3555 18 29.2509 18 30.3555C18 31.46 18.8954 32.3555 20 32.3555Z"
+          fill="#FFBD39"
+          stroke="none"
+        ></path>
       </svg>
-    </a>
-</div>
-
-<div class="content" role="main">
-
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
-
-    <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
-      <title>Rocket Ship</title>
-      <g id="Group_83" data-name="Group 83" transform="translate(-141 -696)">
-        <circle id="Ellipse_8" data-name="Ellipse 8" cx="50.839" cy="50.839" r="50.839" transform="translate(141 696)" fill="#dd0031"/>
-        <g id="Group_47" data-name="Group 47" transform="translate(165.185 720.185)">
-          <path id="Path_33" data-name="Path 33" d="M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z" transform="translate(0.371 3.363)" fill="#fff"/>
-          <path id="Path_34" data-name="Path 34" d="M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z" transform="translate(0 0.005)" fill="#fff"/>
-        </g>
-      </g>
-    </svg>
-
-    <span>{{ title }} app is running!</span>
-
-    <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
-      <title>Rocket Ship Smoke</title>
-      <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#f5f5f5"/>
-    </svg>
-
-  </div>
-
-  <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
-
-  <div class="card-container">
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-      <span>Learn Angular</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-      <span>CLI Documentation</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://material.angular.io">
-      <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px" width="21.813" height="23.453" viewBox="0 0 179.2 192.7"><path fill="#ffa726" d="M89.4 0 0 32l13.5 118.4 75.9 42.3 76-42.3L179.2 32 89.4 0z"/><path fill="#fb8c00" d="M89.4 0v192.7l76-42.3L179.2 32 89.4 0z"/><path fill="#ffe0b2" d="m102.9 146.3-63.3-30.5 36.3-22.4 63.7 30.6-36.7 22.3z"/><path fill="#fff3e0" d="M102.9 122.8 39.6 92.2l36.3-22.3 63.7 30.6-36.7 22.3z"/><path fill="#fff" d="M102.9 99.3 39.6 68.7l36.3-22.4 63.7 30.6-36.7 22.4z"/></svg>
-      <span>Angular Material</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://blog.angular.io/">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
-      <span>Angular Blog</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/devtools/">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M14.73,13.31C15.52,12.24,16,10.93,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.43,0,2.74-0.48,3.81-1.27L19.59,21L21,19.59L14.73,13.31z M9.5,14C7.01,14,5,11.99,5,9.5S7.01,5,9.5,5S14,7.01,14,9.5 S11.99,14,9.5,14z"/><polygon points="10.29,8.44 9.5,6 8.71,8.44 6.25,8.44 8.26,10.03 7.49,12.5 9.5,10.97 11.51,12.5 10.74,10.03 12.75,8.44"/></g></g></svg>
-      <span>Angular DevTools</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-  </div>
-
-  <!-- Next Steps -->
-  <h2>Next Steps</h2>
-  <p>What do you want to do next with your app?</p>
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>New Component</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Angular Material</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Add PWA Support</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Add Dependency</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'test'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Run and Watch Tests</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'build'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Build for Production</span>
-    </button>
-  </div>
-
-  <!-- Terminal -->
-  <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>ng generate component xyz</pre>
-      <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-      <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-      <pre *ngSwitchCase="'dependency'">ng add _____</pre>
-      <pre *ngSwitchCase="'test'">ng test</pre>
-      <pre *ngSwitchCase="'build'">ng build</pre>
-  </div>
-
-  <!-- Links -->
-  <div class="card-container">
-    <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/find/?keywords=angular" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="23.447" viewBox="0 0 24.607 23.447">
-        <title>Meetup Logo</title>
-        <path id="logo--mSwarm" d="M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z" transform="translate(0 0.123)" fill="#f64060"/>
+      <p>Керування всіма рахунками monobank в одному додатку</p>
+      <p>Один додаток для ФОП і особистого рахунку</p>
+    </li>
+    <li>
+      <svg>
+        <path
+          d="M18.9997 35.6673C28.2044 35.6673 35.6663 28.2054 35.6663 19.0007C35.6663 9.79591 28.2044 2.33398 18.9997 2.33398C9.79493 2.33398 2.33301 9.79591 2.33301 19.0007C2.33301 28.2054 9.79493 35.6673 18.9997 35.6673Z"
+          stroke="#FF5858"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M19 9.00098V19.001L25.6667 22.3343"
+          stroke="#FF5858"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
       </svg>
-    </a>
-
-    <a class="circle-link" title="Join the Conversation on Discord" href="https://discord.gg/angular" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 245 240">
-        <title>Discord Logo</title>
-        <path d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
-        <path d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
+      <p>Платежі з валютних рахунків 24/7/365, а не тільки з 10:00 до 15:00</p>
+      <p>
+        Не потрібно чекати поки відкриється міжбанк, щоб продати валюту.
+        Валютообмін 24/7
+      </p>
+    </li>
+    <li>
+      <svg>
+        <path
+          d="M32.333 2.35547H5.66634C3.82539 2.35547 2.33301 3.84785 2.33301 5.6888V22.3555C2.33301 24.1964 3.82539 25.6888 5.66634 25.6888H32.333C34.174 25.6888 35.6663 24.1964 35.6663 22.3555V5.6888C35.6663 3.84785 34.174 2.35547 32.333 2.35547Z"
+          stroke="#5EDA1F"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M12.333 32.3555H25.6663"
+          stroke="#5EDA1F"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M19 25.6885V32.3551"
+          stroke="#5EDA1F"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
       </svg>
-    </a>
-  </div>
+      <p>
+        Окремий бухгалтерський веб-кабінет . Можна додати до двох додаткових
+        номерiв телефону для роботи у веб-кабінеті з рахунком ФОП
+      </p>
+    </li>
+    <li>
+      <svg>
+        <path
+          d="M20 2V38.6667"
+          stroke="#2E9BFF"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M28.3333 8.66602H15.8333C14.2862 8.66602 12.8025 9.2806 11.7085 10.3746C10.6146 11.4685 10 12.9523 10 14.4993C10 16.0464 10.6146 17.5302 11.7085 18.6241C12.8025 19.7181 14.2862 20.3327 15.8333 20.3327H24.1667C25.7138 20.3327 27.1975 20.9473 28.2915 22.0412C29.3854 23.1352 30 24.6189 30 26.166C30 27.7131 29.3854 29.1968 28.2915 30.2908C27.1975 31.3848 25.7138 31.9994 24.1667 31.9994H10"
+          stroke="#2E9BFF"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      <p>Вигідний курс обміну валют</p>
+    </li>
+    <li>
+      <svg>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M31.5274 12.2806C32.6335 13.1241 32.2383 14.3333 30.8725 14.3333H3.01346C1.63393 14.3333 1.24555 13.1294 2.35858 12.2806L16.3366 1.62073C16.6947 1.34761 17.1913 1.34761 17.5494 1.62073L31.5274 12.2806ZM20.3337 16.6667C19.9655 16.6667 19.667 16.9652 19.667 17.3334V26.6667C19.667 27.0349 19.9655 27.3334 20.3337 27.3334C20.7018 27.3334 21.0003 27.0349 21.0003 26.6667V17.3334C21.0003 16.9652 20.7018 16.6667 20.3337 16.6667ZM29.7754 31H4.2188C3.85094 31 3.55273 30.7015 3.55273 30.3334C3.55273 29.9652 3.85094 29.6667 4.2188 29.6667H29.7754C30.1432 29.6667 30.4414 29.9652 30.4414 30.3334C30.4414 30.7015 30.1432 31 29.7754 31ZM32.3339 36H1.66606C1.29821 36 1 35.7015 1 35.3334C1 34.9652 1.29821 34.6667 1.66606 34.6667H32.3339C32.7018 34.6667 33 34.9652 33 35.3334C33 35.7015 32.7018 36 32.3339 36ZM26.333 17.3334C26.333 16.9652 26.6315 16.6667 26.9997 16.6667C27.3679 16.6667 27.6663 16.9652 27.6663 17.3334V26.6667C27.6663 27.0349 27.3679 27.3334 26.9997 27.3334C26.6315 27.3334 26.333 27.0349 26.333 26.6667V17.3334ZM13.6769 16.6667C13.309 16.6667 13.0106 16.9647 13.0102 17.3327L13.0007 26.666C13.0003 27.0345 13.2989 27.3334 13.6673 27.3334C14.0353 27.3334 14.3336 27.0353 14.334 26.6674L14.3436 17.334C14.3439 16.9656 14.0453 16.6667 13.6769 16.6667ZM6.3327 17.333C6.33287 16.965 6.6313 16.6667 6.99937 16.6667C7.36768 16.6667 7.6662 16.9654 7.66604 17.3337L7.66176 26.667C7.66159 27.0351 7.36317 27.3334 6.9951 27.3334C6.62679 27.3334 6.32826 27.0347 6.32843 26.6664L6.3327 17.333ZM30.1871 13H3.69678L16.9419 2.8991L30.1871 13Z"
+          fill="#949BF0"
+        ></path>
+        <path
+          d="M31.5274 12.2806L32.1338 11.4854L31.5274 12.2806ZM2.35858 12.2806L1.75218 11.4854L1.75218 11.4854L2.35858 12.2806ZM16.3366 1.62073L15.7302 0.825574V0.825574L16.3366 1.62073ZM17.5494 1.62073L18.1558 0.825574V0.825574L17.5494 1.62073ZM13.0102 17.3327L14.0102 17.3337V17.3337L13.0102 17.3327ZM13.0007 26.666L12.0007 26.665L13.0007 26.666ZM14.334 26.6674L13.334 26.6664V26.6664L14.334 26.6674ZM14.3436 17.334L15.3436 17.3351L14.3436 17.334ZM6.3327 17.333L5.3327 17.3326V17.3326L6.3327 17.333ZM7.66604 17.3337L8.66604 17.3341V17.3341L7.66604 17.3337ZM7.66176 26.667L8.66176 26.6674L7.66176 26.667ZM6.32843 26.6664L5.32843 26.6659L6.32843 26.6664ZM3.69678 13L3.09038 12.2049L0.736421 14H3.69678V13ZM30.1871 13V14H33.1474L30.7935 12.2049L30.1871 13ZM16.9419 2.8991L17.5483 2.10394L16.9419 1.64149L16.3355 2.10394L16.9419 2.8991ZM30.8725 15.3333C31.83 15.3333 32.7713 14.8848 33.0788 13.9297C33.3832 12.9842 32.8957 12.0664 32.1338 11.4854L30.921 13.0757C31.0857 13.2013 31.1442 13.3023 31.1614 13.3435C31.1768 13.3802 31.1597 13.3643 31.175 13.3168C31.1907 13.2683 31.217 13.2588 31.1937 13.2727C31.1654 13.2896 31.0697 13.3333 30.8725 13.3333V15.3333ZM3.01346 15.3333H30.8725V13.3333H3.01346V15.3333ZM1.75218 11.4854C0.993092 12.0643 0.494688 12.9804 0.798979 13.9303C1.10702 14.8919 2.05718 15.3333 3.01346 15.3333V13.3333C2.81028 13.3333 2.71148 13.2888 2.68212 13.2714C2.65837 13.2574 2.68693 13.268 2.70363 13.3202C2.7199 13.3709 2.70166 13.3883 2.71788 13.3501C2.73607 13.3072 2.79677 13.204 2.96498 13.0757L1.75218 11.4854ZM15.7302 0.825574L1.75218 11.4854L2.96498 13.0757L16.943 2.41589L15.7302 0.825574ZM18.1558 0.825574C17.4395 0.279334 16.4465 0.279333 15.7302 0.825574L16.943 2.41589L16.943 2.41589L18.1558 0.825574ZM32.1338 11.4854L18.1558 0.825574L16.943 2.41589L30.921 13.0757L32.1338 11.4854ZM20.667 17.3334C20.667 17.5175 20.5178 17.6667 20.3337 17.6667V15.6667C19.4132 15.6667 18.667 16.4129 18.667 17.3334H20.667ZM20.667 26.6667V17.3334H18.667V26.6667H20.667ZM20.3337 26.3334C20.5178 26.3334 20.667 26.4826 20.667 26.6667H18.667C18.667 27.5872 19.4132 28.3334 20.3337 28.3334V26.3334ZM20.0003 26.6667C20.0003 26.4826 20.1496 26.3334 20.3337 26.3334V28.3334C21.2541 28.3334 22.0003 27.5872 22.0003 26.6667H20.0003ZM20.0003 17.3334V26.6667H22.0003V17.3334H20.0003ZM20.3337 17.6667C20.1496 17.6667 20.0003 17.5174 20.0003 17.3334H22.0003C22.0003 16.4129 21.2541 15.6667 20.3337 15.6667V17.6667ZM4.2188 32H29.7754V30H4.2188V32ZM2.55273 30.3334C2.55273 31.253 3.2978 32 4.2188 32V30C4.40408 30 4.55273 30.1501 4.55273 30.3334H2.55273ZM4.2188 28.6667C3.2978 28.6667 2.55273 29.4137 2.55273 30.3334H4.55273C4.55273 30.5166 4.40408 30.6667 4.2188 30.6667V28.6667ZM29.7754 28.6667H4.2188V30.6667H29.7754V28.6667ZM31.4414 30.3334C31.4414 29.4137 30.6964 28.6667 29.7754 28.6667V30.6667C29.5901 30.6667 29.4414 30.5166 29.4414 30.3334H31.4414ZM29.7754 32C30.6964 32 31.4414 31.253 31.4414 30.3334H29.4414C29.4414 30.1501 29.5901 30 29.7754 30V32ZM1.66606 37H32.3339V35H1.66606V37ZM0 35.3334C0 36.253 0.745068 37 1.66606 37V35C1.85135 35 2 35.1501 2 35.3334H0ZM1.66606 33.6667C0.745068 33.6667 0 34.4137 0 35.3334H2C2 35.5166 1.85135 35.6667 1.66606 35.6667V33.6667ZM32.3339 33.6667H1.66606V35.6667H32.3339V33.6667ZM34 35.3334C34 34.4137 33.2549 33.6667 32.3339 33.6667V35.6667C32.1487 35.6667 32 35.5166 32 35.3334H34ZM32.3339 37C33.2549 37 34 36.253 34 35.3334H32C32 35.1501 32.1487 35 32.3339 35V37ZM26.9997 15.6667C26.0792 15.6667 25.333 16.4129 25.333 17.3334H27.333C27.333 17.5174 27.1838 17.6667 26.9997 17.6667V15.6667ZM28.6663 17.3334C28.6663 16.4129 27.9201 15.6667 26.9997 15.6667V17.6667C26.8156 17.6667 26.6663 17.5174 26.6663 17.3334H28.6663ZM28.6663 26.6667V17.3334H26.6663V26.6667H28.6663ZM26.9997 28.3334C27.9201 28.3334 28.6663 27.5872 28.6663 26.6667H26.6663C26.6663 26.4826 26.8156 26.3334 26.9997 26.3334V28.3334ZM25.333 26.6667C25.333 27.5872 26.0792 28.3334 26.9997 28.3334V26.3334C27.1838 26.3334 27.333 26.4826 27.333 26.6667H25.333ZM25.333 17.3334V26.6667H27.333V17.3334H25.333ZM14.0102 17.3337C14.01 17.5177 13.8609 17.6667 13.6769 17.6667V15.6667C12.7571 15.6667 12.0112 16.4118 12.0102 17.3317L14.0102 17.3337ZM14.0007 26.667L14.0102 17.3337L12.0102 17.3316L12.0007 26.665L14.0007 26.667ZM13.6673 26.3334C13.8516 26.3334 14.0009 26.4828 14.0007 26.667L12.0007 26.665C11.9997 27.5861 12.7462 28.3334 13.6673 28.3334V26.3334ZM13.334 26.6664C13.3342 26.4824 13.4834 26.3334 13.6673 26.3334V28.3334C14.5872 28.3334 15.3331 27.5882 15.334 26.6684L13.334 26.6664ZM13.3436 17.333L13.334 26.6664L15.334 26.6684L15.3436 17.3351L13.3436 17.333ZM13.6769 17.6667C13.4927 17.6667 13.3434 17.5172 13.3436 17.333L15.3436 17.3351C15.3445 16.4139 14.598 15.6667 13.6769 15.6667V17.6667ZM6.99937 15.6667C6.07919 15.6667 5.33312 16.4124 5.3327 17.3326L7.3327 17.3335C7.33262 17.5175 7.1834 17.6667 6.99937 17.6667V15.6667ZM8.66604 17.3341C8.66646 16.4133 7.92014 15.6667 6.99937 15.6667V17.6667C6.81521 17.6667 6.66595 17.5174 6.66604 17.3332L8.66604 17.3341ZM8.66176 26.6674L8.66604 17.3341L6.66604 17.3332L6.66176 26.6665L8.66176 26.6674ZM6.9951 28.3334C7.91527 28.3334 8.66134 27.5876 8.66176 26.6674L6.66176 26.6665C6.66185 26.4825 6.81106 26.3334 6.9951 26.3334V28.3334ZM5.32843 26.6659C5.32801 27.5867 6.07433 28.3334 6.9951 28.3334V26.3334C7.17925 26.3334 7.32851 26.4827 7.32843 26.6668L5.32843 26.6659ZM5.3327 17.3326L5.32843 26.6659L7.32843 26.6668L7.3327 17.3335L5.3327 17.3326ZM3.69678 14H30.1871V12H3.69678V14ZM16.3355 2.10394L3.09038 12.2049L4.30318 13.7952L17.5483 3.69426L16.3355 2.10394ZM30.7935 12.2049L17.5483 2.10394L16.3355 3.69426L29.5807 13.7952L30.7935 12.2049Z"
+          fill="#949BF0"
+        ></path>
+      </svg>
+      <p>Дружній фінансовий моніторинг і валютний контроль</p>
+    </li>
+  </ul>
+</article>
 
-  <!-- Footer -->
-  <footer>
-      Love Angular?&nbsp;
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
-        <div class="github-star-badge">
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          Star
-        </div>
-      </a>
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-      </a>
-  </footer>
+<article>
+  <h2>Як відкрити рахунок ФОП</h2>
+  <ul>
+    <li>
+      <div><img src="" alt="" /></div>
+      <div>
+        <span>01</span>
+        <p>Пройти швидку реєстрацію в додатку monobank та отримати картку</p>
+      </div>
+    </li>
+    <li>
+      <div><img src="" alt="" /></div>
+      <div>
+        <span>02</span>
+        <p>Бути зареєстрованим як фізична особа-підприємець</p>
+      </div>
+    </li>
+    <li>
+      <div><img src="" alt="" /></div>
+      <div>
+        <span>03</span>
+        <p>Відкрити рахунок ФОП у додатку monobank в 1 торкання</p>
+      </div>
+    </li>
+  </ul>
+</article>
 
-  <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
-    <title>Gray Clouds Background</title>
-    <path id="Path_39" data-name="Path 39" d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z" transform="translate(142.69 -634.312)" fill="#eee"/>
-  </svg>
+<article>
+  <h2>Тарифи</h2>
+  <table>
+    <tr>
+      <th></th>
+      <th>
+        <!-- i would use hgroup but i gave me this exeption
+        Error: src/app/app.component.html:220:9 - error NG8001: 'hgroup' is not a known element:
+1. If 'hgroup' is an Angular component, then verify that it is part of this module.
+2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+        -->
+        <h3>monobank</h3>
+        <h4>Universal Bank</h4>
+      </th>
+      <th>Банк 1</th>
+      <th>Банк 2</th>
+      <th>Банк 3</th>
+    </tr>
+    <tr>
+      <th>Вартість відкриття рахунку</th>
+      <td>0 грн</td>
+      <td>
+        <p>0 грн онлайн</p>
+        <p>100 грн у відділенні</p>
+      </td>
+      <td>1 грн</td>
+      <td>50 грн</td>
+    </tr>
+    <tr>
+      <th>Вартість обслуговування рахунку на місяць</th>
+      <td>0 грн</td>
+      <td>125 грн</td>
+      <td>100 грн</td>
+      <td>129 грн</td>
+    </tr>
+    <tr>
+      <th>Комісія за переказ на рахунки інших банків</th>
+      <td>0 грн</td>
+      <td>3 грн</td>
+      <td>3 грн</td>
+      <td>2 грн</td>
+    </tr>
+  </table>
+  <p>Станом на 26 червня 2020 р.</p>
+  <p><a href="">Детальні тарифи</a></p>
+</article>
 
-</div>
+<article>
+  <h2>Немає картки monobank?</h2>
+  <p>Не страшно, її можна отримати просто зараз</p>
+  <button>Отримати картку</button>
+  <p>
+    Відкриття картки ні до чого не зобов'язує. Крім рахунка ФОП у нас дуже
+    багато <a href="">крутих пропозицій</a>
+  </p>
+</article>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
+<footer>
+  <a href="">monobank <span> Universal bank </span></a>
+  <p>Щоб стати клієнтом, потрібно мати смартфон на Android або iOS</p>
+  <ul>
+    <li>
+      <h3>Банк</h3>
+      <ul>
+        <li><a href="">Про банк</a></li>
+        <li><a href="">Кар'єра</a></li>
+        <li><a href="">Контакти</a></li>
+        <li><a href="">Умови, правила та тарифи</a></li>
+        <li><a href="">Безпека</a></li>
+        <li><a href="">API</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Картки</h3>
+      <ul>
+        <li><a href="">Чорна картка</a></li>
+        <li><a href="">Біла картка</a></li>
+        <li><a href="">Platinum картка</a></li>
+        <li><a href="">IRON картка</a></li>
+        <li><a href="">Дитяча картка</a></li>
+        <li><a href="">єПідтримка</a> <span>NEW</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Продукти</h3>
+      <ul>
+        <li><a href="">Покупка частинами</a></li>
+        <li><a href="">Розстрочка</a></li>
+        <li><a href="">Міжнародні перекази</a></li>
+        <li><a href="">ФОП</a></li>
+        <li><a href="">Депозити</a></li>
+        <li><a href="">Оплата у ресторанах</a></li>
+        <li><a href="">Реєстрові виплати</a></li>
+        <li><a href="">Облігації </a><span>NEW</span></li>
+        <li><a href="">Інвестиції </a><span>NEW</span></li>
+        <li><a href="">QR-еквайринг</a><span>NEW</span></li>
+        <li><a href="">Інтернет-еквайринг </a><span>NEW</span></li>
+      </ul>
+    </li>
+    <li>
+      <div>
+        <a href="">
+          <svg>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h16v16H0z"></path>
+              <path
+                d="M9.393 16V8.702h2.449l.367-2.845H9.393V4.041c0-.823.228-1.384 1.41-1.384l1.505-.001V.111A20.41 20.41 0 0 0 10.114 0C7.943 0 6.456 1.326 6.456 3.76v2.097H4v2.845h2.456V16h2.937z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              ></path>
+            </g>
+          </svg> </a
+        ><a href="">
+          <svg>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h16v16H0z"></path>
+              <path
+                d="M16 3.538c-.589.26-1.22.438-1.885.517a3.296 3.296 0 0 0 1.443-1.815 6.617 6.617 0 0 1-2.086.797A3.282 3.282 0 0 0 7.88 6.029 9.318 9.318 0 0 1 1.115 2.6 3.257 3.257 0 0 0 .67 4.25a3.28 3.28 0 0 0 1.46 2.732A3.283 3.283 0 0 1 .644 6.57v.041A3.286 3.286 0 0 0 3.276 9.83a3.325 3.325 0 0 1-.864.115 3.15 3.15 0 0 1-.618-.061 3.284 3.284 0 0 0 3.065 2.28 6.585 6.585 0 0 1-4.076 1.402c-.265 0-.526-.016-.783-.045a9.278 9.278 0 0 0 5.031 1.477c6.038 0 9.338-5.001 9.338-9.339l-.01-.425A6.554 6.554 0 0 0 16 3.538z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              ></path>
+            </g>
+          </svg> </a
+        ><a href="">
+          <svg>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h16v16H0z"></path>
+              <path
+                d="M11.52 0H4.392A4.396 4.396 0 0 0 0 4.391v7.13a4.396 4.396 0 0 0 4.391 4.39h7.13a4.396 4.396 0 0 0 4.39-4.39V4.39A4.396 4.396 0 0 0 11.522 0zm2.98 11.52a2.983 2.983 0 0 1-2.98 2.98H4.392a2.983 2.983 0 0 1-2.98-2.98V4.392a2.983 2.983 0 0 1 2.98-2.98h7.13a2.983 2.983 0 0 1 2.979 2.98v7.13z"
+                fill="#FFF"
+                fill-rule="nonzero"
+              ></path>
+              <path
+                d="M7.956 3.856c-2.26 0-4.1 1.84-4.1 4.1s1.84 4.1 4.1 4.1 4.1-1.84 4.1-4.1-1.84-4.1-4.1-4.1zm0 6.788a2.691 2.691 0 0 1-2.688-2.688 2.691 2.691 0 0 1 2.688-2.688 2.691 2.691 0 0 1 2.688 2.688 2.691 2.691 0 0 1-2.688 2.688zM12.228 2.659a1.04 1.04 0 0 0-1.035 1.035c0 .272.11.54.304.732.192.192.459.304.73.304.274 0 .54-.112.733-.304a1.04 1.04 0 0 0 0-1.464 1.04 1.04 0 0 0-.732-.303z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              ></path>
+            </g>
+          </svg> </a
+        ><a href="">
+          <svg>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h16v16H0z"></path>
+              <path
+                d="M15.746 8.478L4.638 13.776A.446.446 0 0 1 4 13.373V2.447c0-.333.35-.549.647-.398l11.109 5.629a.446.446 0 0 1-.01.8z"
+                fill="currentColor"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <address>
+        АТ «УНІВЕРСАЛ БАНК» Ліцензія НБУ №92 від 20.01.1994, Номер у держреєстрі
+        банків № 226
+      </address>
+      <p>
+        Банк є учасником <a href="">Фонду гарантування вкладів фізичних осіб</a>
+      </p>
+    </li>
+  </ul>
+</footer>

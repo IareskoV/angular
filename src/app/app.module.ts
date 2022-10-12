@@ -15,6 +15,6 @@ import { FOPComponent } from './fop/fop.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,FOPComponent]
 })
 export class AppModule { }
