@@ -7,6 +7,8 @@ import { Component, OnInit,Input  } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
  @Input() translation:any
+
+ time = new Date();
   constructor() { }
 
   ngOnInit(): void {
