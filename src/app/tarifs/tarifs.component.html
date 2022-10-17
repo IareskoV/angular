@@ -1,0 +1,52 @@
+<section class="container tarifs">
+  <h2 class="content__header tarifs__header">{{translation.header}}</h2>
+  <table class="tabble tabble__tarifs">
+    <tr class="tabble__row tarifs__row">
+      <th class="tabble__header tarifs__header"></th>
+      <th class="tabble__header tarifs__header-container">
+        <!-- i would use hgroup but i gave me this exeption
+        Error: src/app/app.component.html:220:9 - error NG8001: 'hgroup' is not a known element:
+1. If 'hgroup' is an Angular component, then verify that it is part of this module.
+2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+        -->
+        <h3 class="tarifs__header-main">{{translation.tabble.headersRow.header2.first}}</h3>
+        <h4 class="tarifs__header-additional">{{translation.tabble.headersRow.header2.second}}</h4>
+      </th>
+      <th class="tarifs__header-main tarifs__header-main_bank1">{{translation.tabble.headersRow.header3.first}}</th>
+      <th class="tarifs__header-main tarifs__header-main_bank2">{{translation.tabble.headersRow.header4.first}}</th>
+      <th class="tarifs__header-main tarifs__header-main_bank3">{{translation.tabble.headersRow.header5.first}}</th>
+    </tr>
+    <tr class="tabble__row tarifs__row">
+      <th class="tabble__header tarifs__header-container">
+        {{translation.tabble.row1.header}}
+      </th>
+      <td class="content tarifs__content">{{translation.tabble.row1.colum2}}</td>
+      <td class="content tarifs__content">
+        <p>{{translation.tabble.row1.column3}}</p>
+        <p>100 грн у відділенні</p>
+      </td>
+      <td class="content tarifs__content">{{translation.tabble.row1.colum4}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row1.colum5}}</td>
+    </tr>
+    <tr class="tabble__row tarifs__row">
+      <th class="tabble__header tarifs__header-container">
+        {{translation.tabble.row2.header}}
+      </th>
+      <td class="content tarifs__content">{{translation.tabble.row2.column2}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row2.colum3}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row2.colum4}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row2.colum5}}</td>
+    </tr>
+    <tr class="tabble__row tarifs__row">
+      <th class="tabble__header tarifs__header-container">
+        {{translation.tabble.row3.header}}
+      </th>
+      <td class="content tarifs__content">{{translation.tabble.row3.colum2}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row3.colum3}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row3.colum4}}</td>
+      <td class="content tarifs__content">{{translation.tabble.row3.colum5}}</td>
+    </tr>
+  </table>
+  <p class="date tarifs__date">{{translation.text}}</p>
+  <p class="link tarifs__link"><a href="">{{translation.link}}</a></p>
+</section>
