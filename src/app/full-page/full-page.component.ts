@@ -1,23 +1,20 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-full-page',
+  templateUrl: './full-page.component.html',
+  styleUrls: ['./full-page.component.scss']
 })
-export class AppComponent {
-  title = 'first-app';
-
+export class FullPageComponent implements OnInit {
   translationUAobject = {
 
     header:{
       logo1:"monobank",
       logo2:"Universal bank",
       mainLinks:{
-        l1:"Full page",
-        l2:"blue",
-        l3:"footer",
+        l1:"дашбоард",
+        l2:"API",
+        l3:"Контакти",
         l4:"Укр",
         l5:"Eng"
       },
@@ -138,4 +135,11 @@ export class AppComponent {
     }
 
   }
+  constructor() {
+
+   }
+  @Input() translation:any
+  ngOnInit(): void {
+  }
+
 }

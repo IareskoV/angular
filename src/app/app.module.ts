@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,10 +17,11 @@ import { LandingHeaderComponent } from './landing-header/landing-header.componen
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 
+const routes: Routes = []
+
 @NgModule({
   declarations: [
     AppComponent,
-    FOPComponent,
     MainSectionComponent,
     CabinetComponent,
     YouWaitingComponent,
@@ -37,6 +39,6 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent,FOPComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

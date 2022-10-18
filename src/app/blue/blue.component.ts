@@ -1,28 +1,25 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-blue',
+  templateUrl: './blue.component.html',
+  styleUrls: ['./blue.component.scss']
 })
-export class AppComponent {
-  title = 'first-app';
-
+export class BlueComponent implements OnInit {
   translationUAobject = {
 
     header:{
       logo1:"monobank",
       logo2:"Universal bank",
       mainLinks:{
-        l1:"Full page",
-        l2:"blue",
-        l3:"footer",
+        l1:"дашбоард",
+        l2:"API",
+        l3:"Контакти",
         l4:"Укр",
         l5:"Eng"
       },
       additionalLinks:{
-        l1:"footer component",
+        l1:"Картки",
         l2:"ФОП",
         l3:"Депозити",
         l4:"облігації",
@@ -138,4 +135,9 @@ export class AppComponent {
     }
 
   }
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 }

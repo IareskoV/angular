@@ -1,4 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-main',
@@ -6,6 +9,12 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  routes: Routes = [
+    {
+      path: '',
+      component: MainComponent
+    }
+  ];
   @Input() translation:any
   constructor() { }
 
