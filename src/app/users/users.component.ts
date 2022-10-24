@@ -1,8 +1,7 @@
-import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Firestore,addDoc } from '@angular/fire/firestore';
-
+import { Firestore} from '@angular/fire/firestore';
+import { UsersService } from '../Service/users.service';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +14,6 @@ export class UsersComponent implements OnInit {
   // form: any = {};
   form:any  = {
   }
-
 
 
   constructor() {

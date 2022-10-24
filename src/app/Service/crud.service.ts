@@ -4,7 +4,21 @@ import {
   AngularFireList,
   AngularFireObject,
 } from '@angular/fire/compat/database';
-interface Student {
+import {
+  CollectionReference,
+  Firestore,
+  Query,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  orderBy,
+  query,
+  updateDoc,
+  where,
+  docData,
+} from '@angular/fire/firestore';
+interface user {
   $key: string;
   firstName: string;
   lastName: string;
@@ -13,24 +27,29 @@ interface Student {
 @Injectable({
   providedIn: 'root'
 })
-export class CRUDService {
-  userRef!: AngularFireList<any>;
-  usersRef!: AngularFireObject<any>;
-  constructor(private db: AngularFireDatabase) { }
+export abstract class CRUDService <T> {
+  abstract collectionName: string;
 
-  AddUser(student: Student) {
-    this.userRef.push({
-      firstName: student.firstName,
-      lastName: student.lastName,
-      email: student.email,
-    });
+  docsRef!: AngularFireList<any>;
+  docRef!: AngularFireObject<any>;
+  constructor(public db: Firestore) { }
+
+  add(obj:T) {
+    this.docsRef.push({...obj});
   }
-  GetUsersList() {
-    this.usersRef = this.db.list('students-list');
-    return this.userRef;
+  updateUser(id: string, obj: T){
+    const docRef = doc(this.db, this.collectionName, id);
+    const newObject: any = { ... obj };
+    return updateDoc(docRef, newObject);
   }
-  GetUser(id: string) {
-    this.userRef = this.db.object('students-list/' + id);
-    return this.userRef;
+  delete(id:string){
+    return deleteDoc(doc(this.db, this.collectionName + id));
+  }
+  getList() {
+    return collection(this.db,this.collectionName);
+  }
+  get(id: string) {
+    const docRef = doc(this.db, this.collectionName +id);
+    return docData(docRef, { idField: 'id' })
   }
 }
