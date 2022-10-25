@@ -9,10 +9,8 @@ Injectable({
 })
 type user = {
   email:string,
-  password:string,
   firstName:string,
   secondName:string,
-  birthDate:Date,
 }
 
 export class UsersService extends CRUDService<user>{

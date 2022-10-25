@@ -1,9 +1,22 @@
 
-<!-- <form #form="ngForm" >
-  <input  type="text" name="firstName" placeholder="firstname" id="firstName" [(ngModel)]="form.firstName">
-  <input type="text" name="" placeholder="secondname" id="secondname" [(ngModel)]="form.secondname">
-  <input type="email" name="" placeholder="email" id="email" [(ngModel)]="form.email">
-  <label for="">date of birth</label>
-  <input type="date" name="birthDate" id="birthDate" [(ngModel)]="form.birthDate">
-  <button type="submit">submmit</button>
-</form> -->
+<div class="container">
+  <form #myForm="ngForm" (ngSubmit)="onSubmitForm(myForm.value)" >
+    <mat-form-field style="margin-right: 10px;" class="example-form-field" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input  matInput   type="text" name="firstName"  id="firstName" [(ngModel)]="form.name">
+    </mat-form-field>
+    <mat-form-field style="margin-right: 10px;"  class="example-form-field" appearance="fill">
+      <mat-label>second name</mat-label>
+      <input matInput type="text" name="secondName"  id="secondName" [(ngModel)]="form.secondName">
+    </mat-form-field>
+
+    <mat-form-field style="margin-right: 10px;"  class="example-form-field" appearance="fill">
+      <mat-label>email</mat-label>
+      <input matInput type="email" name="email"  id="email" [(ngModel)]="form.email">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">submit</button>
+  </form>
+
+  <app-users-table (deleteItemEvent)="handleDelete($event)" [users]="usersList"></app-users-table>
+</div>
+
