@@ -1,0 +1,19 @@
+<div class="container">
+  <form #myForm="ngForm" (ngSubmit)="onSubmitForm(myForm.value)" >
+    <mat-form-field style="margin-right: 10px;" class="example-form-field" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input  matInput   type="text" name="firstName"  id="firstName" [(ngModel)]="form.name">
+    </mat-form-field>
+    <mat-form-field style="margin-right: 10px;"  class="example-form-field" appearance="fill">
+      <mat-label>second name</mat-label>
+      <input matInput type="text" name="secondName"  id="secondName" [(ngModel)]="form.secondName">
+    </mat-form-field>
+
+    <mat-form-field style="margin-right: 10px;"  class="example-form-field" appearance="fill">
+      <mat-label>email</mat-label>
+      <input matInput type="email" name="email"  id="email" [(ngModel)]="form.email">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Update</button>
+  </form>
+</div>
+

@@ -5,12 +5,12 @@
     <th style="margin-right: 10px; margin-bottom: 5px;" mat-header-cell>secondname</th>
     <th style="margin-right: 10px; margin-bottom: 5px;" mat-header-cell>email</th>
   </tr>
-  <tr     [attr.id]="user.id" *ngFor="let user of users">
-      <td style="margin-right: 10px; margin-bottom: 5px;" mat-cell   class="name">{{user.name}}</td>
-      <td style="margin-right: 10px; margin-bottom: 5px;" mat-cell   class="secondname">{{user.secondName}}</td>
-      <td style="margin-right: 10px; margin-bottom: 5px;" mat-cell class="email">{{user.email}}</td>
+  <tr  [attr.id]="user.id" *ngFor="let user of users">
+      <td [routerLink]="[user.id]" style="margin-right: 10px; margin-bottom: 5px;" mat-cell   class="name">{{user.name}}</td>
+      <td [routerLink]="[user.id]" style="margin-right: 10px; margin-bottom: 5px;" mat-cell   class="secondname">{{user.secondName}}</td>
+      <td [routerLink]="[user.id]" style="margin-right: 10px; margin-bottom: 5px;" mat-cell class="email">{{user.email}}</td>
       <button (click)="handleDelete(user.id)" style="margin-right: 10px; margin-bottom: 5px;" mat-raised-button color="warn"  mat-cell type="button"> delete</button>
-      <button style="margin-right: 10px; margin-bottom: 5px;" mat-raised-button color="accent"   mat-cell type="button"> update</button>
+      <button [routerLink]="[user.id, 'update']" style="margin-right: 10px; margin-bottom: 5px;" mat-raised-button color="accent"   mat-cell type="button"> update</button>
   </tr>
 </table>
 

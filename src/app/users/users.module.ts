@@ -9,13 +9,19 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { UsersTableComponent } from '../users-table/users-table.component';
+import { UserInstanceComponent } from '../user-instance/user-instance.component';
+import { UserUpdateComponent } from '../user-update/user-update.component';
+import { UserInstanceButtonsComponent } from '../user-instance-buttons/user-instance-buttons.component';
 
 
 @NgModule({
   declarations: [
     UsersComponent,
     UsersTableComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    UserInstanceComponent,
+    UserUpdateComponent,
+    UserInstanceButtonsComponent
   ],
   imports: [
     CommonModule,

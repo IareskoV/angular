@@ -55,7 +55,7 @@ export abstract class CRUDService<T> {
     });
   }
   get(id: string) {
-    const docRef = doc(this.db, this.collectionName + id);
+    const docRef = doc(this.db, this.collectionName, id);
     return docData(docRef, { idField: 'id' });
   }
 }

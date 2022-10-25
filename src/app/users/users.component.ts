@@ -6,7 +6,6 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Firestore } from '@angular/fire/firestore';
 import { UsersService } from '../Service/users.service';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
-import { observable, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
