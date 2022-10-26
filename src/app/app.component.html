@@ -1,6 +1,26 @@
 <!-- may be its better to write like this header_main, header_additional because main and additional it can be modifiers -->
-<app-header [translation]="translationUAobject.header"></app-header>
-<router-outlet ></router-outlet>
+<mat-toolbar>
+  <div>
+    sing-up with firebase
+    <span *ngIf = "user$ | async as user">{{user.email}}</span>
+  </div>
+
+    <ng-container *ngIf="authService.currentUser$ | async sa user; else loginButton">
+      <button mat-button  (click) = "logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </ng-container>
+    <ng-template #loginButton>
+      <button mat-button routerLink = "login">
+        <mat-icon>login</mat-icon>
+        login
+      </button>
+    </ng-template>
+
+</mat-toolbar>
+<!-- <app-header [translation]="translationUAobject.header"></app-header> -->
+<router-outlet  ></router-outlet>
 <!-- <app-main [translation]="translationUAobject.main"></app-main>
 <app-cabinet [translation]="translationUAobject.cabinet"></app-cabinet>
 <app-open-count [translation]="translationUAobject.openCount"></app-open-count>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './Service/auth.service';
 
 
 @Component({
@@ -137,5 +139,12 @@ export class AppComponent {
 
     }
 
+  }
+  constructor(public authService:AuthService,private router:Router){}
+  user$ = this.authService.currentUser$;
+  logout(){
+    this.authService.logout().subscribe(()=>{
+      this.router.navigate([''])
+    })
   }
 }

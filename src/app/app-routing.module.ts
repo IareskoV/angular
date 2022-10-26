@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { SingUpComponent } from './sing-up/sing-up.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,14 @@ const routes: Routes = [
   {
     path:'cabinet',
     loadChildren:()=> import('./cabinet/cabinet.component').then((m) => m.CabinetComponent)
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'sing-up',
+    component:SingUpComponent
   },
   // { path: 'fullpage', loadChildren: () => import('./full-page/full-page.module').then(m => m.FullPageModule) },
   // { path: 'blue', loadChildren: () => import('./blue/blue.module').then(m => m.BlueModule) },
