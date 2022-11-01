@@ -10,9 +10,15 @@ export class UserInstanceButtonsComponent implements OnInit {
   handleDelete(){
     this._sharedService.emitDelete("in the name of GOD delete me")
   }
-  constructor(private _sharedService:UpdateSharedService) { }
+  constructor(private _sharedService:UpdateSharedService) {
+    console.log('construcor buttons')
+
+  }
 
   ngOnInit(): void {
   }
+  ngOnDestroy(){
+    console.log('destroyed buttons')
 
+  }
 }

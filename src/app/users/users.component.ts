@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Firestore } from '@angular/fire/firestore';
 import { UsersService } from '../Service/users.service';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -14,6 +15,9 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 })
 export class UsersComponent implements OnInit {
   // form: any = {};
+  searchForm = new FormGroup({
+    search:new FormControl(''),
+  })
 
   form: user = {
     name: '',

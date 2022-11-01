@@ -10,7 +10,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: UserInstanceComponent,
-    children: [{ path: 'update', component: UserUpdateComponent },{ path: '', component: UserInstanceButtonsComponent }],
+    children: [
+      { path: 'update', component: UserUpdateComponent },
+      { path: '', component: UserInstanceButtonsComponent },
+    ],
   },
 ];
 

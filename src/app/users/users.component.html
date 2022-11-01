@@ -17,6 +17,13 @@
     <button mat-raised-button color="primary" type="submit">submit</button>
   </form>
 
+  <form [formGroup]="searchForm" >
+    <mat-form-field formControlName = "search" style="margin-right: 10px;" class="example-form-field" appearance="fill">
+      <mat-label>search</mat-label>
+      <input  matInput   type="text" name="search"  id="search" >
+    </mat-form-field>
+  </form>
+
   <app-users-table (deleteItemEvent)="handleDelete($event)" [users]="usersList"></app-users-table>
 </div>
 

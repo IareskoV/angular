@@ -27,6 +27,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
 
 
 
+
+
 const routes: Routes = []
 
 @NgModule({
@@ -35,6 +37,7 @@ const routes: Routes = []
     HeaderComponent,
     SingUpComponent,
     LoginComponent,
+
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebase)),

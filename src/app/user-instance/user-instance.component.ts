@@ -13,6 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserInstanceComponent implements OnInit {
   userId = '';
+  changeSubscrition
+  deleteSubscrition
   userInstance = {
     email: 'loading',
     id: '',
@@ -27,12 +29,13 @@ export class UserInstanceComponent implements OnInit {
     private firestore: Firestore,
     private _sharedService: UpdateSharedService
   ) {
-    _sharedService.changeEmitted$.subscribe((data) => {
+    console.log("parent constructor")
+     this.changeSubscrition=_sharedService.changeEmitted$.subscribe((data) => {
       console.log('change')
       this.updateItem(data);
     });
-    _sharedService.deleteEmitted$.subscribe((data)=>{
-      console.log('update')
+    this.deleteSubscrition= _sharedService.deleteEmitted$.subscribe((data)=>{
+      console.log('delete')
       this.openDialog(this.userId)
     })
   }
@@ -45,6 +48,7 @@ export class UserInstanceComponent implements OnInit {
       .subscribe((ans) => (this.userInstance = ans as userInstance));
   }
   ngOnInit(): void {
+    console.log("parent init")
     this.route.url.subscribe((url) => {
       this.userId = url[0].path;
       this.getuser(url[0].path);
@@ -63,6 +67,7 @@ export class UserInstanceComponent implements OnInit {
   updateItem(data: object) {
     console.log(data);
     this.db.updateUser(this.userId, data as any).then((ans) => {
+
       this.router.navigate(['/', 'users', `${this.userId}`]);
       this.openSnackBar('user updated');
     });
@@ -88,6 +93,11 @@ export class UserInstanceComponent implements OnInit {
         this.deleteItem(id, fullName);
       }
     });
+  }
+  ngOnDestroy(){
+    console.log('destroyed')
+    this.deleteSubscrition.unsubscribe()
+    this.changeSubscrition.unsubscribe()
   }
 }
 type userInstance = {

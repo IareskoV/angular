@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button'
 import {MatSnackBarModule} from '@angular/material/snack-bar'
@@ -12,6 +12,7 @@ import { UsersTableComponent } from '../users-table/users-table.component';
 import { UserInstanceComponent } from '../user-instance/user-instance.component';
 import { UserUpdateComponent } from '../user-update/user-update.component';
 import { UserInstanceButtonsComponent } from '../user-instance-buttons/user-instance-buttons.component';
+import { SearchDirective } from '../Directives/search.directive';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UserInstanceButtonsComponent } from '../user-instance-buttons/user-inst
     DeleteDialogComponent,
     UserInstanceComponent,
     UserUpdateComponent,
-    UserInstanceButtonsComponent
+    UserInstanceButtonsComponent,
+    SearchDirective
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { UserInstanceButtonsComponent } from '../user-instance-buttons/user-inst
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ]
 })
 export class UsersModule { }
