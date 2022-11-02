@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FOPComponent } from './fop/fop.component';
 import { HeaderComponent } from './header/header.component';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -17,7 +16,6 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 
 
 import { environment } from '../environments/environment';
-import { UsersTableComponent } from './users-table/users-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { LoginComponent } from './login/login.component';

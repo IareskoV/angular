@@ -13,8 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserInstanceComponent implements OnInit {
   userId = '';
-  changeSubscrition
-  deleteSubscrition
+  changeSubscrition;
+  deleteSubscrition;
   userInstance = {
     email: 'loading',
     id: '',
@@ -29,26 +29,21 @@ export class UserInstanceComponent implements OnInit {
     private firestore: Firestore,
     private _sharedService: UpdateSharedService
   ) {
-    console.log("parent constructor")
-     this.changeSubscrition=_sharedService.changeEmitted$.subscribe((data) => {
-      console.log('change')
+    this.changeSubscrition = _sharedService.changeEmitted$.subscribe((data) => {
       this.updateItem(data);
     });
-    this.deleteSubscrition= _sharedService.deleteEmitted$.subscribe((data)=>{
-      console.log('delete')
-      this.openDialog(this.userId)
-    })
+    this.deleteSubscrition = _sharedService.deleteEmitted$.subscribe((data) => {
+      this.openDialog(this.userId);
+    });
   }
   db = new UsersService(this.firestore);
 
   getuser(id: string) {
-    console.log(id);
     this.db
       .get(id)
-      .subscribe((ans) => (this.userInstance = ans as userInstance));
+      .subscribe((ans) => (this.userInstance = ans as UserInstance));
   }
   ngOnInit(): void {
-    console.log("parent init")
     this.route.url.subscribe((url) => {
       this.userId = url[0].path;
       this.getuser(url[0].path);
@@ -61,13 +56,10 @@ export class UserInstanceComponent implements OnInit {
     this.router.navigate(['/', 'users']);
     this.db.delete(id).then((ans) => {
       this.openSnackBar(`user ${name} deleted`);
-
     });
   }
   updateItem(data: object) {
-    console.log(data);
     this.db.updateUser(this.userId, data as any).then((ans) => {
-
       this.router.navigate(['/', 'users', `${this.userId}`]);
       this.openSnackBar('user updated');
     });
@@ -77,7 +69,7 @@ export class UserInstanceComponent implements OnInit {
     enterAnimationDuration = '0ms',
     exitAnimationDuration = '0ms'
   ) {
-    const user = this.userInstance.name + " " + this.userInstance.secondName
+    const user = this.userInstance.name + ' ' + this.userInstance.secondName;
     let fullName = '';
     let config = {
       width: '250px',
@@ -88,25 +80,23 @@ export class UserInstanceComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DeleteDialogComponent, config);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
       if (result) {
         this.deleteItem(id, fullName);
       }
     });
   }
-  ngOnDestroy(){
-    console.log('destroyed')
-    this.deleteSubscrition.unsubscribe()
-    this.changeSubscrition.unsubscribe()
+  ngOnDestroy() {
+    this.deleteSubscrition.unsubscribe();
+    this.changeSubscrition.unsubscribe();
   }
 }
-type userInstance = {
+type UserInstance = {
   email: string;
   name: string;
   secondName: string;
   id: string;
 };
-type user = {
+type User = {
   email: string;
   name: string;
   secondName: string;

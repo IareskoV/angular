@@ -24,9 +24,6 @@ const routes: Routes = [
     path: 'sing-up',
     component: SingUpComponent,
   },
-  // { path: 'fullpage', loadChildren: () => import('./full-page/full-page.module').then(m => m.FullPageModule) },
-  // { path: 'blue', loadChildren: () => import('./blue/blue.module').then(m => m.BlueModule) },
-  // { path: 'footerM', loadChildren: () => import('./footer-m/footer-m.module').then(m => m.FooterMModule) },
   {
     path: 'users',
     canActivate:[IsLoggedGuard],

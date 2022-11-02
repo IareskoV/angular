@@ -16,10 +16,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class UsersComponent implements OnInit {
   // form: any = {};
   searchForm = new FormGroup({
-    search:new FormControl(''),
-  })
+    search: new FormControl(''),
+  });
 
-  form: user = {
+  form: User = {
     name: '',
     secondName: '',
     email: '',
@@ -95,7 +95,7 @@ export class UsersComponent implements OnInit {
   }
 }
 
-type user = {
+type User = {
   email: string;
   name: string;
   secondName: string;

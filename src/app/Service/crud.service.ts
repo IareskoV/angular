@@ -41,19 +41,23 @@ export abstract class CRUDService<T> {
   add(obj: T) {
     return addDoc(this.collectionRef, { ...(obj as any) });
   }
+
   updateUser(id: string, obj: T) {
     const docRef = doc(this.db, this.collectionName, id);
     const newObject: any = { ...obj };
     return updateDoc(docRef, newObject);
   }
+
   delete(id: string): Promise<void> {
     return deleteDoc(doc(this.db, this.collectionName, id));
   }
+
   getList() {
     return collectionData(query(collection(this.db, this.collectionName)), {
       idField: 'id',
     });
   }
+
   get(id: string) {
     const docRef = doc(this.db, this.collectionName, id);
     return docData(docRef, { idField: 'id' });
